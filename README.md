@@ -1,7 +1,8 @@
 # unified-paas
 SeaClouds Unified PaaS Library
 
-## Usage
+---
+## 1. Usage
 1. Compile needed projects
 
 * https://github.com/rosogon/heroku-java-client. Compile with `mvn install –Dmaven.test.skip`. 
@@ -22,81 +23,98 @@ SeaClouds Unified PaaS Library
 ##### Integration Tests
 * Execute tests: `mvn clean verify -P integration-test`
 
-## Java Client Libraries
+---
+## 2. Java Client Libraries
 Java client libraries used in the project:
 
-+ [Cloud Foundry](https://github.com/cloudfoundry/cf-java-client)
+#### Cloud Foundry
++ **Cloud Foundry**:  [Cloud Foundry Java Client](https://github.com/cloudfoundry/cf-java-client)
 <dl>
   <dt>Description</dt>
-  <dd></dd>
+  <dd>The cf-java-client project is a Java language binding for interacting with a Cloud Foundry instance (including PaaS providers like Pivotal, Bluemix etc.).</dd>
   <dt>Features</dt>
 </dl>
 
 | Feature       | Supported?    | Comments  |
 | ------------- |:-------------:|:-----|
-| Application deployment      | YES  | Tested with **Java** and **PHP** apps |
-| Start / Stop / Remove |   YES     |   - |
-| Scaling capabilities     | YES       |  Can scale number of instances, disk and RAM |
-| Services management |   YES     |   Tested with **ClearDB** from Pivotal |
-| Environment variables management |   YES     |   Read & Write |
+| Application deployment      | :white_check_mark:  | Tested with **Java** and **PHP** apps |
+| Start / Stop / Remove |   :white_check_mark:     |   :heavy_minus_sign: |
+| Scaling capabilities     | :white_check_mark:       |  Can scale number of instances, disk and RAM |
+| Services management |   :white_check_mark:     |   Tested with **ClearDB** from Pivotal |
+| Environment variables management |   :white_check_mark:     |   Read & Write |
 
-| Limitations  |
+| Limitations / Comments |
 | ------------- ||
-| - |
----
-+ [Heroku](https://github.com/heroku/heroku.jar)
+| :heavy_minus_sign: |
+
++ :new: **Cloud Foundry** (new version) :  [Cloud Foundry Java Client](https://github.com/cloudfoundry/cf-java-client)
 <dl>
   <dt>Description</dt>
-  <dd></dd>
+  <dd>The new version of the cf-java-client project is based on Java 8 and [Project Reactor](https://projectreactor.io/) (a second-generation Reactive library for building non-blocking applications on the JVM based on the Reactive Streams Specification).</dd>
+  <dt>Features</dt>
+  <dd>-Not implemented-</dd>
+</dl>
+ 
+---
+#### Heroku
++ **Heroku**:  [Heroku JAR](https://github.com/heroku/heroku.jar) & [heroku-maven-plugin](https://github.com/heroku/heroku-maven-plugin)
+<dl>
+  <dt>Description</dt>
+  <dd>[Heroku JAR](https://github.com/heroku/heroku.jar): The Heroku JAR is a java artifact that provides a simple wrapper for the Heroku REST API. The Heroku REST API allows Heroku users to manage their accounts, applications, addons, and other aspects related to Heroku.</dd>
+  <dd>[heroku-maven-plugin](https://github.com/heroku/heroku-maven-plugin): This plugin is used to deploy Java applications directly to Heroku without pushing to a Git repository. This is can be useful when deploying from a CI server, deploying pre-built Jar or War files.</dd>
   <dt>Features</dt>
 </dl>
 
 | Feature       | Supported?    | Comments  |
 | ------------- |:-------------:|:-----|
-| Application deployment      | YES  | Tested with **Java** |
-| Start / Stop / Remove |   YES     |   - |
-| Scaling capabilities     | YES       |  Can scale number of instances |
-| Services management |   YES     |   Tested with **ClearDB** from Pivotal |
-| Environment variables management |   YES     |   Read & Write |
+| Application deployment      | :white_check_mark:  | Tested with **Java** |
+| Start / Stop / Remove |   :white_check_mark:     |   :heavy_minus_sign: |
+| Scaling capabilities     | :white_check_mark:       |  Can scale number of instances |
+| Services management |   :white_check_mark:     |   Tested with **ClearDB** from Pivotal |
+| Environment variables management |   :white_check_mark:     |   Read & Write |
 
-| Limitations  |
+| Limitations / Comments |
 | ------------- ||
-| - |
+| :heavy_minus_sign: |
 ---
-
-+ [Openshift v2](https://github.com/openshift/openshift-java-client) (used by Openshift Online)
+#### OpenShift
++ **OpenShift v2**:  [OpenShift Java Client](https://github.com/openshift/openshift-java-client) (used by Openshift Online / only for Version 2)
 <dl>
   <dt>Description</dt>
-  <dd></dd>
+  <dd>Java client for the OpenShift REST API. This client is used by JBoss Tools for OpenShift 2.x.</dd>
   <dt>Features</dt>
 </dl>
 
 | Feature       | Supported?    | Comments  |
 | ------------- |:-------------:|:-----|
-| Application deployment      | YES  | Only from GIT |
-| Start / Stop / Remove |   YES     |   - |
-| Scaling capabilities     | YES       |  Can scale number of instances |
-| Services management |   YES     |   Tested with **MySQL** from [Openshift Online](https://openshift.redhat.com) |
-| Environment variables management |   -     |  -  |
+| Application deployment      | :white_check_mark:  | :heavy_exclamation_mark: Only from GIT |
+| Start / Stop / Remove |   :white_check_mark:     |   :heavy_minus_sign: |
+| Scaling capabilities     | :white_check_mark:       |  Can scale number of instances |
+| Services management |   :white_check_mark:     |   Tested with **MySQL** from [Openshift Online](https://openshift.redhat.com) |
+| Environment variables management |   :x:     |  :heavy_minus_sign:  |
 
-| Limitations  |
+| Limitations / Comments |
 | ------------- ||
-| - |
+| :heavy_minus_sign: |
 ---
 
-+ [Openshift v3](https://github.com/openshift/openshift-restclient-java)  (new version for the version 3 architecture of OpenShift based on Kubernetes: OpenShift Enterprise, local Openshift installations ...)
++ :new: [Openshift v3](https://github.com/openshift/openshift-restclient-java)  (new version for the version 3 architecture of OpenShift based on Kubernetes: OpenShift Enterprise, local Openshift installations ...)
 <dl>
   <dt>Description</dt>
   <dd>-Not implemented-</dd>
   <dt>Features</dt>
-  <dd>-</dd>
+  <dd>:heavy_minus_sign:</dd>
 </dl>
 
 ---
 
-| Client        | Version           | URL  |
-| ------------- |:-------------:| :-----|
-| Cloud Foundry      | 1.1.3  | https://github.com/cloudfoundry/cf-java-client |
-| Heroku      | 0.16 / 0.5.7 *       |   https://github.com/heroku/heroku.jar |
-| Openshift v2 |   2.7.0.Final     |    https://github.com/openshift/openshift-java-client |
-| Openshift v3 |   -     |    https://github.com/openshift/openshift-restclient-java |
+| Client        | Version used  | License | Comments  |
+| ------------- |:-------------:| :-------| :---------|
+| Cloud Foundry | 1.1.3         | Apache License v2       | :heavy_minus_sign:       |
+| :new: Cloud Foundry | :heavy_minus_sign:       | Apache License v2       | :heavy_minus_sign:       |
+| Heroku        | 0.16 / 0.5.7**| :heavy_minus_sign: / MIT License**       | :heavy_minus_sign:       |
+| Openshift v2  | 2.7.0.Final   | Eclipse Public License v1.0       | :heavy_minus_sign:       |
+| :new: Openshift v3  | :heavy_minus_sign:       | :heavy_minus_sign:       | :heavy_minus_sign:       |
+
+
+** heroku-maven-plugin
